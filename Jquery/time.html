@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/test.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<h1>第一个计时器<span class="time1"></span></h1>
+		<h1>第二个计时器<span class="time2"></span></h1>
+		<h1>第三个计时器<span class="time3"></span></h1>
+		<h1>第四个计时器<span class="time4"></span></h1>
+		<h1>第五个计时器<span class="time5"></span></h1>
+		
+		<div class="" style=" display: inline-block; height: 600px;width: 1200px;vertical-align: middle;text-align: center; border: 1px solid red;">
+			 <div class="" style="display:inline ;vertical-align: middle;">123123</div>
+			 
+		</div>
+		<script type="text/javascript">
+			function time(val, elem) {
+				this.time = setInterval(function() {
+					if (val > 0) {
+						$("." + elem).text(val);
+						val--;
+					} else {
+						clearInterval(time); //停止计时器
+					}
+				}, 1000);
+			}
+			var kk = new time(60, "time1");
+			var kk2 = new time(55, "time2");
+			var kk3 = new time(178, "time3");
+			var kk4 = new time(519, "time4");
+			var kk5 = new time(113, "time5");
+			
+			 
+		</script>
+	</body>
+
+</html>

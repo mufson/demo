@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			div{
+				padding: 100px;
+				margin-top: 100px;
+				height: 100px;
+				background-color: #006633;
+			}
+			div+div{
+				margin-top: 1300px;
+			}
+			div+div{
+				margin-top: 2500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aa"></div>
+		<div class="aa2"></div>
+		<div class="aa3"></div>
+		
+		<script type="text/javascript">
+		 $(window).scroll(function() {
+		 	
+		 	var len = $('div:visible').length;
+		 	//  $('.aa').offset().top; //元素相对于窗口的位置
+		 	console.log(len);
+		 	
+		 })
+		   //还没有滚到屏幕                                                     //滚出屏幕
+		 if(scrollTop+windowHei<offsetTop || offsetTop + 元素.height(outerHeight是否使用这个?)<scrollTop){
+		 	
+		 }
+		</script>
+	</body>
+</html>

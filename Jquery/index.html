@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>test</title>
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#info input{
+				display: inline-block;
+				width: 120px;
+				height: 50px;
+				background-color: #006633;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" placeholder="输入密码" />
+		<ul class="ul_list">
+			<li id="a">1</li>
+			<li id="b">2</li>
+			<li id="c">3</li>
+			<li id="d">4</li>
+		</ul>
+		<div id="info" style="width: 500px;height: 300px;">
+			
+			<input type="text" name="" id="" value="" />
+			<input type="tel" name="" id="" value="" />
+			
+		</div>
+		<input type="file" name="" id="" value="" />
+		<script type="text/javascript">
+			$(".ul_list li").click(function(){
+			 	console.log(this.id);
+				
+				print(this.id);
+			});
+			
+			function print(id){
+				
+				console.log($("#" + id).text());
+			}
+		</script>
+	</body>
+</html>
+

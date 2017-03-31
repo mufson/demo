@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		h1, h2, h3, h4, h5, h6 {
+		    font-size: 100%;
+		    font-weight: 500;
+		}
+		.shield {
+			    filter: none;
+			    background-color: rgba(0, 0, 0, 0.5);
+			}
+	.shield {
+		    filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#A8000000', endColorstr='#A80000000');
+		}
+	.shield {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 9999;
+	    text-align: center;
+	}
+	.shield .line {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    vertical-align: middle;
+    margin-left: -1px;
+}
+.pop-box-auto {
+    width: auto;
+}
+.pop-box {
+    display: inline-block;
+ 
+    background-color: #fff;
+    vertical-align: middle;
+    text-align: left;
+    -webkit-box-shadow: 1px 1px 10px #8c8c8c;
+    -moz-box-shadow: 1px 1px 10px #8c8c8c;
+    box-shadow: 1px 1px 10px #8c8c8c;
+    z-index: 1050;
+    position: relative;
+ 
+    border-radius: 5px;
+}
+.pop-box .pop-box-head {
+    background-color: #00b1ff;
+    text-align: right;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+.pop-box .pop-box-head h4 {
+    float: left;
+    padding: 10px 25px;
+    font-size: 14px;
+    color: #fff;
+}
+.pop-box .pop-box-head a {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+}
+.fn-clear, .clear {
+    zoom: 1;
+}
+.pop-box .pop-box-body {
+    padding: 20px 25px 48px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+.fn-text-center {
+    text-align: center;
+}
+.pop-box-auto .pop-box-body .explain {
+    width: auto;
+}
+.pop-box .pop-box-body .explain {
+ 
+ 
+    line-height: 1.8;
+    color: #96999f;
+}
+.pop-box .pop-box-body .explain {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.pop-box .pop-box-body .textRemarks{
+	display: block;
+	margin: 10px;
+	padding: 5px;
+}
+a.btn, .btn, a.btn-empty, .btn-empty {
+    border: 0;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0 35px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #00b1ff;
+    color: #FFFFFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+a.btn-red, .btn-red {
+    background-color: #ff657d;
+}
+		</style>
+	</head>
+	<body>
+		    <div class="shield" >
+        <span class="line"></span>
+        <div class="pop-box pop-box-auto">
+            <div class="pop-box-head fn-clear">
+                <h4>取消申请</h4>
+                <a ng-click = "vm.cancel = true;"><i class="icon-close"></i></a>
+            </div>
+            <div class="pop-box-body fn-text-center">
+                <p class="explain font16">申请取消后将无法恢复，是否确认？</p> 
+                <textarea name="" rows="3" cols="50" class="textRemarks" ></textarea>
+                <input type="button" class="btn btn-red mr20" value="确认" ng-click = "cancleOrder()">
+                <input type="button" class="btn" value="取消" ng-click = "vm.cancel = true;">
+            </div>
+        </div>
+    </div>
+	</body>
+</html>

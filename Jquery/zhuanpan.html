@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>转盘</title>
+	</head>
+	<body style="background-color: blueviolet;">
+	<canvas id="canvas" width="640" height="640" style="width: 320px;height: 320px;"></canvas>
+	</body>
+<script>
+    (function () {
+        window.requestAnimFrame = (function () {
+            return window.requestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    function (fn) {
+                        window.setTimeout(fn, 1000 / 60);
+                    };
+        })();
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";//区分Mobile和PC以加载不同的事件
+        window.addEventListener(evt, roundResponse, false);
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var angle = 125;
+
+        var num = 8000.0112;//可用额度
+        var max_num = 10000;//最大额度
+        var percent = num / max_num;
+
+        roundResponse();
+        loop();
+
+        //获取可用额度小数点后两位
+        function getNum(num) {
+            var str = num.toFixed(2) + "";
+            return str.substring(str.indexOf(".") + 1);
+        }
+
+        //圆盘大小自适应
+        function roundResponse() {
+            var width = window.innerWidth < 750 ? window.innerWidth : 750 / 375 * 320;
+            canvas.setAttribute("style", "width:" + width + "px;height:" + width + "px;");
+        }
+
+        //圆盘动画
+        function loop() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            angle += 5;
+
+            //内圆轨道绘制
+            ctx.beginPath();
+            ctx.lineWidth = 24;
+            ctx.strokeStyle = "#59b7fc";
+            ctx.lineCap = "round";
+            ctx.arc(320, 320, 210, 2 * Math.PI * 135 / 360, 2 * Math.PI * 405 / 360);
+            ctx.stroke();
+
+            //内圆绘制
+            var grd_1 = ctx.createLinearGradient(0, 0, 170, 0);
+            grd_1.addColorStop(0, "#2acdfc");
+            ctx.beginPath();
+            grd_1.addColorStop(1, "#4bf7ca");
+            ctx.strokeStyle = grd_1;
+            ctx.lineWidth = 24;
+            ctx.arc(320, 320, 210, 2 * Math.PI * 135 / 360, 2 * Math.PI * angle / 360);
+            ctx.stroke();
+
+            //外圆绘制
+            ctx.beginPath();
+            ctx.strokeStyle = "#80bcfd";
+            ctx.lineWidth = 4;
+            ctx.lineCap = "round";
+            ctx.arc(320, 320, 240, 2 * Math.PI * 135 / 360, 2 * Math.PI * angle / 360);
+            ctx.stroke();
+
+            //光点绘制
+            var x, y;
+            ctx.beginPath();
+            if (angle < 270) {
+                x = 320 - Math.abs(Math.cos(2 * Math.PI * angle / 360)) * 240;
+            } else {
+                x = 320 + Math.abs(Math.cos(2 * Math.PI * angle / 360)) * 240;
+            }
+            if (angle > 180 && angle < 360) {
+                y = 320 - Math.abs(Math.sin(2 * Math.PI * angle / 360)) * 240
+            } else {
+                y = 320 + Math.abs(Math.sin(2 * Math.PI * angle / 360)) * 240
+            }
+            ctx.save();
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = "#fff";
+            ctx.arc(x, y, 8, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.restore();
+
+            //文本绘制
+            ctx.textBaseline = "middle";
+            ctx.fillStyle = "#fff";
+            ctx.font = "72px Arial";
+            ctx.textAlign = "right";
+            ctx.fillText(num.toFixed(0) + ".", 400, 330);
+            ctx.font = "28px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("本年度", 320, 200);
+            ctx.fillText("学费+住宿费（元）", 336, 250);
+            ctx.font = "40px Arial";
+            ctx.textAlign = "left";
+            ctx.fillText(getNum(num), 400, 336);
+
+            ctx.textAlign = "center";
+            ctx.font = "24px Arial";
+            ctx.save();
+            ctx.translate(200, 440);
+            ctx.rotate(45 * Math.PI / 180);
+            ctx.fillText("0", 0, 0);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(440, 440);
+            ctx.rotate(-50 * Math.PI / 180);
+            ctx.fillText(max_num + "", 0, 0);
+            ctx.restore();
+
+            if (angle < 405 - 270 * (1 - percent)) {
+                requestAnimFrame(loop);
+            }
+        }
+    }());
+
+</script>
+</html>

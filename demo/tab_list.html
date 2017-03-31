@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>列表切换</title>
+		<link rel="stylesheet" type="text/css" href="css/tab_list.css"/>
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<ul class="tab_list">
+			<li class="cur_list">热门活动</li>
+			<li>牛奶饮料</li>
+			<li>休闲食品</li>
+			<li>粮油酒水</li>
+			<li>保健生鲜</li>
+		</ul>
+		
+		<div class="list_box">
+			<div class="cur_box">热门活动区域</div>
+			<div>牛奶饮料区域</div>
+			<div>休闲食品区域</div>
+			<div>粮油酒水区域</div>
+			<div>保健生鲜区域</div>
+		</div>
+			<div id="menu_background">
+				<div id="menu">
+					<div class="menu_caption">
+						<span>全部产品</span>
+						<div class="menu_subMenu">
+							<ul>
+								<li>
+									<h2>按功能</h2>
+									<p><a>普通门窗</a><a>高性能门窗</a></p>
+									<div class="menu_subMenu_box">按功能</div>
+								</li>
+								<li>
+									<h2>按分类</h2>
+									<p><a>门</a><a>窗</a><a>阳光房</a></p>
+									<div class="menu_subMenu_box"> 按分类</div>
+								</li>
+								<li>
+									<h2>按系列/价格</h2>
+									<p><a>E系列</a><a>S系列</a><a>U系列</a><a>N系列</a></p>
+									<div class="menu_subMenu_box">按系列/价格</div>
+								</li>
+								<li>
+									<h2>按区域</h2>
+									<p><a>阳台</a><a>卧室</a><a>卫生间</a><a>厨房</a></p>
+									<div class="menu_subMenu_box">按区域</div>
+								</li>
+								<li>
+									<h2>门窗周边产品</h2>
+									<p><a>纱窗</a><a>沙门</a></p>
+									<div class="menu_subMenu_box">门窗周边产品</div>
+								</li>
+								<li>
+									<h2>窗管家</h2>
+									<p><a>门窗保养</a><a>门窗维护</a></p>
+									<div class="menu_subMenu_box">窗管家</div>
+								</li>								
+							</ul>
+						</div>					
+					</div>
+					<ul>
+							<li class="bg"><a href="#">首页</a></li>
+							<li><a href="#">促销活动</a></li>
+							<li><a href="#">封阳台窗</a></li>
+							<li><a href="#">隔音门窗</a></li>
+							<li><a href="#">阳光房</a></li>
+							<li><a href="#">周边产品</a></li>
+							<li><a href="#">窗管家</a></li>
+							<li><a href="#">门店地图</a></li>	
+					</ul>
+				</div>
+			</div>
+	</body>
+	<script type="text/javascript">
+		$('.tab_list li').hover(function(){
+			$(this).addClass('cur_list').siblings().removeClass('cur_list');
+		$('.list_box div').eq($('.tab_list li').index($(this))).addClass('cur_box').siblings().removeClass('cur_box');
+		})
+		
+		//鼠标在全部产品上停留后展示子菜单
+		 $("body").on("mouseenter","div.menu_caption",function(){
+		 	$(this).find('.menu_subMenu').show();
+	    	$('.menu_subMenu .menu_subMenu_box').hide();
+	    	$(".menu_subMenu ul li:even").addClass("sub_even");
+			$(".menu_subMenu ul li:odd").addClass("sub_odd");
+	    });
+	     $("body").on("mouseleave",".menu_caption",function(){ 
+	    	$(this).find('.menu_subMenu').hide();
+	    });
+	    
+		$("body").on("mouseenter",".menu_subMenu ul li",function(){
+		 var $menu_li =$("#menu .menu_caption .menu_subMenu ul li");		 	 
+			$(this).addClass("sub_selected").siblings().removeClass("sub_selected");//修改选中的背景色
+            var index =  $menu_li.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+           
+			$(".menu_subMenu .menu_subMenu_box").hide();   	//选取子节点。不选取子节点的话，会引起错误。如果里面还有div 
+			$(".menu_subMenu .menu_subMenu_box").eq(index).show();   //显示 <li>元素对应的<div>元素
+			
+	    });
+		$("body").on("mouseleave",".menu_subMenu ul li",function(){
+	    	$(this).removeClass("sub_selected");
+	    	
+	    } ); 
+	    //显示所有产品的子菜单
+	  // $("#menu .menu_caption").find('.menu_subMenu').show();
+	    //导航切换功能
+	    $("body").on("hover","#menu>ul li",function(){
+	    	$(this).addClass("bg").siblings().removeClass("bg");
+	    })
+	</script>
+</html>

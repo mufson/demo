@@ -1,0 +1,16 @@
+.head{
+	padding: 30rpx 0 44rpx 0;
+	text-align: center;
+	font-size: 50rpx;
+	font-weight: bold;
+} 
+.title{
+ 	padding-left: 24rpx;
+	font-weight: bold;
+	
+}
+.text{
+ 	padding-left: 24rpx;
+ 	padding-right: 24rpx;
+	 
+}

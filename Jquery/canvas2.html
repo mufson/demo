@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<canvas id="canvas" width="2000" height="300"></canvas>
+	 
+	<body>
+		
+		<script type="text/javascript">
+			 var canvas = document.getElementById('canvas');
+			  var context =canvas.getContext("2d");
+			  
+			  var spacingX = 10,
+			  spacingY = 10,
+			  posX = 100,
+			  posY = 100,
+			  moveLen = 1500,
+			  more = (moveLen-posX)/spacingX,
+			  yValue = spacingY;
+			  
+			  context.strokeStyle = "rgb(34,158,254)";
+			  context.lineWidth = 2;
+			  context.lineTo(posX   , posY);
+			  context.lineTo(moveLen, posY);
+			  context.stroke();
+			  
+			  for(var i =1;i<more;i++){
+			   
+			  	spacingY = i%5==0?yValue*2:yValue;
+			  	 context.moveTo(posX+spacingX*i, posY);
+				  context.lineTo(posX+spacingX*i, posY-spacingY);
+				  context.stroke();
+			  }
+			  
+			   
+		</script>
+	</body>
+</html>

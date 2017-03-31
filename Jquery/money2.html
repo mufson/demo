@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>贷款金额计算</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/moneyReckon.css"/>
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="money">
+			<ul>
+				<li>
+					<label for="">申请金额</label>
+					<input type="text" name="" id="applyMoney" value="" />
+				</li>
+				<li>
+					<label for="">贷款总额</label>
+					<input type="text" name="" id="sunMoney" value="" />
+				</li>
+				<li>
+					<label for="">月利息</label>
+					<input type="text" name="" id="moneyMoney" value="" />
+				</li>
+				<li>
+					<label for="">天利息</label>
+					<input type="text" name="" id="moneyDay" value="" /> *
+					<input type="text" name="" id="Day" value="" placeholder="天数" /> =
+					<span class="sumday"> </span>
+				</li>
+				<li>
+					<label for="">服务费</label>
+					<input type="text" name="" id="monthServer" value="" />
+				</li>
+			</ul>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+	//借款利率  月利率
+	var loanRate = 5.88/100/12;           
+	//借款利率  日利率
+	var dayloanRate = 5.88/100/12/30;   
+	//每月服务费费率
+	var monthRate = 2.5/10000;     	
+	
+		$('#applyMoney').keyup(function () {
+			 apply = parseFloat($(this).val());
+			 sunMoney = apply/0.91;
+			 server = sunMoney *monthRate;
+			 moneyMoney = sunMoney*loanRate;
+			 moneyDay = sunMoney*dayloanRate;
+			$('#sunMoney').val(sunMoney.toFixed(2));
+			$('#monthServer').val(server.toFixed(2));
+			$('#moneyMoney').val(moneyMoney.toFixed(2));
+			$('#moneyDay').val(moneyDay.toFixed(2));
+		});
+		$('#Day').keyup(function () {
+			var daynum = parseFloat($(this).val())==''?1:parseFloat($(this).val());
+			var sumMoney = moneyDay * daynum;
+				$('.sumday').html(sumMoney.toFixed(2));
+		});
+	</script>
+</html>

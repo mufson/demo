@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/lib/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+	<body>
+		
+		<div id="qrcode"></div>
+	</body>
+	
+	<script type="text/javascript">
+		function akl(str,fn){
+			fn(str);
+		}
+		
+		function print (str) {
+			console.log(str);
+		}
+ 
+ 		$('#qrcode').qrcode({render: 'canvas',width: 64,height: 64,text: "http://blog.wpjam.com"});
+		akl("罗曼尼",print);
+	</script>
+</html>

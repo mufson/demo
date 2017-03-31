@@ -1,0 +1,45 @@
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	margin: 0 auto;
+	font: 14px/1.5 Microsoft YaHei, Arial, sans-serif;
+	-webkit-tap-highlight-color:rgba(0,0,0,0); 
+	width: 1280px;
+	height: 1024px;
+ 	position: relative;
+	background-image: url(../img/main_background.png);
+	/*overflow: hidden;*/
+}
+a {
+	text-decoration: none;
+}
+
+img,
+input {
+	border: none;
+}
+
+li {
+	list-style: none;
+}
+ 
+input,
+textarea {
+	-webkit-appearance: none;
+}
+
+ th,h2,h3,b {
+	font-weight: normal;
+}
+a:focus,
+input:focus,
+p:focus,
+div:focus{
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+/*-webkit-user-modify:read-write-plaintext-only;*/
+}
+a:focus {outline-style:none; -moz-outline-style: none;}
