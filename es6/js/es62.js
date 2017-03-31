@@ -239,7 +239,19 @@ function fn5 (that) {
  }
 console.log(o);
 
+var objd = {};
+objd.foo = true;
 
+objd['a'+'ds'] = 123;
+console.log(objd);
 
+function dbv () {
+	console.log("del");
+}
+console.log(dbv.name);
+
+console.log(Object.assign(2));
+
+//bind 方法创建的函数 bound 函数名  Function anonymous
  	/*	***************************************/
 })

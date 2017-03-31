@@ -22,3 +22,19 @@ myapp.namespace = function (ns_string) {
 		return parent;
 }
 
+函数对象
+name  返回函数的名字
+	bind 方法创建的函数 bound 函数名  Function anonymous
+object.is 比较两个值是否严格相等
+object.assign(target,obj2,obj3)  数组覆盖合并
+Object.assign(someClass.prototype,{someMethod(){
+	
+}},
+anotherMethod(){
+	
+})
+ 为对象添加方法  克隆对象
+ object.getOwnPropertyDescriptor() 获取该属性的描述对象''
+ 
+ 
+
