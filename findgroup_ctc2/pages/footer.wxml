@@ -1,9 +1,0 @@
-<!--<view class="foot-area"   ></view>
- <view class="footer center">
- 	<navigator wx:for-items="{{foot}}" url="../{{item.url}}/{{item.url}}" open-type="redirect">
- 		  <image src="../../image/{{item.name}}.png"></image>  
- 	</navigator>
- 
-
-
- </view>-->
