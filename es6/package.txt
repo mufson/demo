@@ -1,0 +1,92 @@
+name 名字
+version  版本号
+author   作者
+description   备注
+
+scripts   运行命令的缩写
+"scripts": {
+    "preinstall": "echo here it comes!",
+    "postinstall": "echo there it goes!",
+    "start": "node index.js",
+    "test": "tap test/*.js"
+}
+npm run preinstall
+
+
+dependencies  项目运行所依赖的模块
+devDependencies  项目开发需要的模块
+	 1.2.2  安装指定版本
+	~1.2.2  安装1.2.x 的最新版本不低于1.2.2
+	^1.2.2 安装 1.x.x 的最新版本不低于1.2.2
+	latest 安装最新版本
+	
+单独安装
+npm install express --save		写入 dependencies 项目运行所依赖的模块
+npm install express --save-dev  写入 devDependencies 项目开发需要模块
+
+peerDependencies 就是用来供插件指定其所需要的主工具的版本。
+{
+  "name": "chai-as-promised",
+  "peerDependencies": {
+    "chai": "1.x"
+  }
+}
+安装chai-as-promised模块时，主程序chai必须一起安装，而且chai的版本必须是1.x。如果你的项目指定的依赖是chai的2.0版本，就会报错。
+
+bin 指定各个内部命令对应的可执行文件的位置
+"bin": {
+  "someTool": "./bin/someTool.js"
+}
+上面代码指定，someTool 命令对应的可执行文件为 bin 子目录下的 someTool.js。
+Npm会寻找这个文件，在node_modules/.bin/目录下建立符号链接。在上面的例子中，
+someTool.js会建立符号链接npm_modules/.bin/someTool。
+由于node_modules/.bin/目录会在运行时加入系统的PATH变量，
+因此在运行npm时，就可以不带路径，直接通过命令来调用这些脚本
+
+scripts: {  
+  start: './node_modules/someTool/someTool.js build'
+}
+// 简写为
+scripts: {  
+  start: 'someTool build'
+}
+
+
+main 加载入口文件
+
+config 向环境变量输出值
+ "config" : { "port" : "8080" },
+
+browser 指定该模版供浏览器使用的版本
+"browser": {
+  "tipso": "./node_modules/tipso/src/tipso.js"
+},
+
+engines 指定项目需要的node.js版本
+
+man 指定当前模块的man文档的位置
+"man" :[ "./doc/calc.1" ]
+
+preferGlobal 表示当用户不将不该模块安装为全局模块显示警告 表示该模块本意是安装为全局模块
+
+style 指定供浏览器使用时，样式文件所在的位置。
+"style": [
+  "./node_modules/tipso/src/tipso.css"
+]
+
+repository  指定代码存放地址
+"repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/npm/npm.git"
+  }
+    
+  license  你应该为你的模块制定一个协议，让用户知道他们有何权限来使用你的模块，以及使用该模块有哪些限制。最简单的，例如你用BSD-3-Clause 或 MIT之类的协议
+
+homepage 项目主页地址
+
+
+bugs 一个提交bug的地方
+  "bugs": {
+    "url": "https://github.com/dbpoo/gulp/issues"
+  },
+

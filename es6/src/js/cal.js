@@ -7,7 +7,7 @@ $(function(){
 		var v3 = parseFloat($('.val3').val()) ;
 		var sum = (v1*v2/v3).toFixed(2);
  
-		$('.sum').html( sum);
+		$('.sum').html( sum);   
  
 	})
 	
