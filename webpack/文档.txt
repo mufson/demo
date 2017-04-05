@@ -8,7 +8,14 @@ npm install css-loader style-loader --save-dev
 
 // 这里要双引号
 webpack hello.js hello.bundle.js --module-bind "css=style-loader!css-loader"  
+
 // --watch监听文件改变  --progress 查看进度 --display-modules  显示打包的所有模块  --display-reasons 打包模块的原因
+
 webpack hello.js hello.bundle.js --module-bind "css=style-loader!css-loader" --watch --display-modules --progress
 
+配置 webpack 
+webpack --config webpack.dev.config.js  //运行配置文件
+webpack   默认运行的是 webpack.config.js
+
+cnpm install html-webpack-plugin --save-dev
 
