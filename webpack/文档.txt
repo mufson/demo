@@ -1,0 +1,14 @@
+npm init 初始化 package.json 文件
+npm install webpack --save-dev
+
+webpack hello.js hello.bundle.js  打包文件
+
+页面可以引入css 文件
+npm install css-loader style-loader --save-dev
+
+// 这里要双引号
+webpack hello.js hello.bundle.js --module-bind "css=style-loader!css-loader"  
+// --watch监听文件改变  --progress 查看进度 --display-modules  显示打包的所有模块  --display-reasons 打包模块的原因
+webpack hello.js hello.bundle.js --module-bind "css=style-loader!css-loader" --watch --display-modules --progress
+
+
