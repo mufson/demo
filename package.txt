@@ -1,3 +1,4 @@
+npm init 初始化package文件
 name 名字
 version  版本号
 author   作者
