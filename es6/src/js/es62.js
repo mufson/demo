@@ -141,7 +141,7 @@ var bv =  ab.map(function (value,index,array) {
  	return 'ending';
  }
  var ht = hell0();
- console.log(ht.next());
+// console.log(ht.next());
  
 function add1 (that) {
 	console.log("add1");
@@ -219,39 +219,64 @@ function fn5 (that) {
 // asyncFuncArr.funcArr.push(fn3);
 // asyncFuncArr.funcArr.push(fn1);
  var ba = new AsyncFunArr(fn1,fn4,fn3,fn4,fn5);
- console.log(asyncFuncArr.funcArr);
- console.log(ba.funcArr);
+// console.log(asyncFuncArr.funcArr);
+// console.log(ba.funcArr);
 // asyncFuncArr.run();
 // ba.run();
- console.log("我是尾部");  
+// console.log("我是尾部");  
  
  var o = {
  	s:987,
  	method(){
- 	console.log("45644545");
+// 	console.log("45644545");
  		
  	}
  }
  class bad {
  	print(){
- 		console.log("ds");
+// 		console.log("ds");
  	}
  }
-console.log(o);
+//console.log(o);
 
 var objd = {};
 objd.foo = true;
 
 objd['a'+'ds'] = 123;
-console.log(objd);
+//console.log(objd);
 
 function dbv () {
 	console.log("del");
 }
-console.log(dbv.name);
+//console.log(dbv.name);
 
-console.log(Object.assign(2));
+//console.log(Object.assign(2));
 
 //bind 方法创建的函数 bound 函数名  Function anonymous
+
+//class
+ class ah{
+ 	constructor(x,y){
+ 		this.x = x;
+ 		this.y = y;
+ 	}
+ 	toString(){
+ 		return '(' + this.x + ','+this.y +  ')';
+ 	}
+ 	dsa(){
+ 		console.log("dsa");
+ 	}
+ }
+ function fks () {
+ 	console.log("sls");
+ }
+var kz = new ah(8,60);
+console.log(kz.toString());
+kz.dsa()
+
+fks.prototype.ghk = function () {
+	console.log("ghk");
+}
+new fks().ghk()
  	/*	***************************************/
 })
