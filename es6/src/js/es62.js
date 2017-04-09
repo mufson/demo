@@ -264,19 +264,23 @@ function dbv () {
  		return '(' + this.x + ','+this.y +  ')';
  	}
  	dsa(){
- 		console.log("dsa");
+// 		console.log("dsa");
  	}
  }
  function fks () {
- 	console.log("sls");
+// 	console.log("sls");
  }
 var kz = new ah(8,60);
-console.log(kz.toString());
+//console.log(kz.toString());
 kz.dsa()
 
 fks.prototype.ghk = function () {
 	console.log("ghk");
 }
-new fks().ghk()
+//new fks().ghk()
+
+
+
+
  	/*	***************************************/
 })
