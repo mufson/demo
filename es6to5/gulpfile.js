@@ -1,16 +1,20 @@
 
 var gulp = require("gulp");
+var sourcemaps = require("gulp-sourcemaps");   //js处理
+var concat = require("gulp-concat");   //js处理
 var babel = require("gulp-babel");    // 用于ES6转化ES5
 var uglify = require('gulp-uglify'); // 用于压缩 JS
 
 // ES6转化为ES5
 // 在命令行使用 gulp toes5 启动此任务
-gulp.task("toes5", function () {
-  return gulp.src("src/js/*.js")// ES6 源码存放的路径
-    .pipe(babel()) 
-    .pipe(gulp.dest("dist/js"))  //转换成 ES5 存放的路径
-    .pipe(uglify())
-    .pipe(gulp.dest("dist/minjs")); //转换成 ES5 存放的路径
+gulp.task("toes5", function (event) {
+		var Src = event.path,//获取绝对路径
+			Dst = Src.replace(/src/,"dist");//获取绝对路径替换路径
+			Dst = Dst.replace(/\\([^\\]+?)$/,'\\');//去除文件名只取路径 
+	 return gulp.src(Src)// ES6 源码存放的路径
+		    .pipe(babel()) 
+		    .pipe(uglify())
+		    .pipe(gulp.dest(Dst)); //转换成 ES5 存放的路径
 });
 
 // 压缩 js 文件
@@ -28,7 +32,16 @@ gulp.task('min', function() {
 // 在命令行使用 gulp auto 启动此任务
 gulp.task('auto', function () {
     // 监听文件修改，当文件被修改则执行 script 任务
-    gulp.watch('src/js/*.js', ['toes5']);
+       gulp.watch('src/js/*.js', function (event) {
+		var Src = event.path,//获取绝对路径
+			Dst = Src.replace(/src/,"dist");//获取绝对路径替换路径
+			Dst = Dst.replace(/\\([^\\]+?)$/,'\\');//去除文件名只取路径 
+			console.log(Src);
+	  gulp.src(Src)// ES6 源码存放的路径
+		    .pipe(babel()) 
+		    .pipe(uglify())
+		    .pipe(gulp.dest(Dst)); //转换成 ES5 存放的路径
+	});
 //  gulp.watch('dist/js/*.js', ['min']);
 
 });

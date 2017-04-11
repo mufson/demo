@@ -1,5 +1,1 @@
-"use strict";
-
-function abz() {
-	console.log("eeee");
-}
+"use strict";function fz(){console.log("fz5"),console.log("4")}
