@@ -280,6 +280,30 @@ fks.prototype.ghk = function () {
 //new fks().ghk()
 
 
+// import { area, circumference } from 'circle';
+
+var obj = {
+	'class':function () {
+		console.log("class");
+	}
+}
+
+var foo = 'acx';
+var acx = 'abc';
+var baz = {[foo]:'acx'};
+
+class Point {
+	constructor(x,y){
+		Object.assign(this,{x,y});
+	}
+}
+var s  = new Point(10,20);
+//console.log(s);
+
+var sg = {x:{b:35}};
+var g = Object.assign({},sg);
+sg.x.b = 85;
+//console.log(g);
 
 
  	/*	***************************************/

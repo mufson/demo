@@ -1,0 +1,16 @@
+{
+  "name": "es6to5",
+  "version": "1.0.0",
+  "description": "",
+    "devDependencies": {
+    "gulp-babel": "latest",
+    "babel-preset-es2015": "latest",  
+    "gulp-uglify": "latest"   
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
