@@ -107,4 +107,5 @@ var j2 =   new Promise(function(x){
 	})
 
  
-var spf = Promise.all(j1,j2).then(()=>console.log("ok"));
+var spf = Promise.all([j1,j2]).then(()=>console.log("ok"));
+
