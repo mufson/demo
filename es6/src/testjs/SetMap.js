@@ -52,15 +52,43 @@ console.log(ws)
 //存储DOM节点
 
 //Map 值对应值   Object  字符串对应值
+//键值唯一  后面的值覆盖前面的值
+//未定义键值返回undefind
+//set(key,value)   get(key)  has(key)  delete(key)  claer()  
+//keys() values()  entries()  foreach()
+//遍历接口Symbol.iterator    map[Symbol.iterator] === map.entries
+const m = new Map();
+const o = {p:'Hello word!'};
 
+m.set(o,'content');
+const items = [
+		['name','张三'],
+		['title','Author']
+	];
+const map = new Map();
 
+items.forEach(
+	([key,value])=>map.set(key,value)
+);
 
+console.log(map);
 
+function strMapToObj (strMap) {
+	let obj = Object.create(null);
+	for(let [k,v] of strMap){
+		obj[k] = v;
+	}
+	return obj;
+}
+//对象JOSN  // '{"yes":true,"no":false}'         map.set() 
+//数组JSON  // '[[true,7],[{"foo":3},["abc"]]]'  new Map()
 
+//WeakMap
+//只接受对象作为键名  没有遍历 size 无法情况
+// get set has delete
 
-
-
-
+	const wm1 = new WeakMap();
+	
 
 
 
