@@ -39,7 +39,7 @@ gulp.task('auto', function () {
 			console.log(Src);
 	  gulp.src(Src)// ES6 源码存放的路径
 		    .pipe(babel()) 
-		    .pipe(uglify())
+//		    .pipe(uglify())
 		    .pipe(gulp.dest(Dst)); //转换成 ES5 存放的路径
 	});
 //  gulp.watch('dist/js/*.js', ['min']);
