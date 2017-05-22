@@ -57,3 +57,4 @@ var ssk = document.getElementsByTagName('div');
 console.log(ssk);
 
 //var sum = [1,2,3,4,10].reduce((x,y)=>x+y);
+

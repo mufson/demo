@@ -1,0 +1,26 @@
+<input type="checkbox"  /> checked checked="checked" checked="" 表示选中
+section 页面的内容块  章节 页眉 页脚 页面中的其他部分 与 h1-6 结合使用
+article 页面中与上下文不相关的独立内容 比如文章
+aside  artice内容之外的，与之相关的辅助信息
+header 表示页面中的一个内容区块或整个页面的标题
+hgroup 整个页面或者页面中一个内容区块的标题进行组合
+footer 表示整个页面或者页面中一个内容区块的脚注
+nav  页面中导航链接的部分
+figure 一段独立的流内容表示文档主体流内容中的一个独立单元。。使用figcaption 元素为figure元素组添加标题
+
+video 定义视频 电影片段
+audeo 音频片段
+embed 插入多媒体 Midi Wav AIFF AU MP3
+
+mark 高亮文字
+progress 进程
+meter 度量衡
+time 时间 日期
+ruby 元素注释
+rt   字符的解释
+rp  ruby注释中使用 不支持ruby时候显示的内容
+wbr 软换行   br 是必定换行 只够宽就不换行
+
+canvas 图形图像 
+
+command 命令按钮  单选按钮 复选框  或按钮
