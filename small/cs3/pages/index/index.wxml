@@ -1,0 +1,7 @@
+
+
+  
+	
+	
+	<view >{{showDate}} </view> 
+	<view bindtap="start">开始计时 </view> 

@@ -1,0 +1,20 @@
+{
+  "pages":[
+  "pages/index/index"
+  ],
+  
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页" 
+  },  
+
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
+
+
