@@ -1,9 +1,0 @@
- /**app.wxss**/
-page{
-    
-} 
-
-.hideNone{
-	display: none !important;
-}
- 
