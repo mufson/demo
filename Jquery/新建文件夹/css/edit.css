@@ -1,0 +1,36 @@
+#edit{
+	display: flex;
+	width: 500px;
+	height: 600px;
+	align-items: flex-end;
+	border: 1px solid #eee;
+}
+#edit .menu{
+	position: relative;
+	flex: 1;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	color: #000;
+}
+#edit .menu:hover .child{
+	opacity: 1;
+}
+#edit .menu .child{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	overflow: hidden;	 
+	transform: translateY(-100%); 
+	opacity: 0;
+}
+ 
+#edit .child   span{
+	float: left;
+	width: 100%;
+	height: 100px;
+	color: green;
+	text-align: center;
+	line-height: 100px;
+	background-color: cadetblue;
+}

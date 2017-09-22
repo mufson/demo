@@ -58,3 +58,12 @@ sl.saything();
  //继承
  //1.父类的构造函数成为子类的方法。子类调用方法。通过this 关键字实现属性和方法赋值
  //2.使用call 和 apply 改变上下文执行环境实现继承  无法继承原型链
+
+var kg = 5;
+
+setTimeout(function(){
+	console.log(kg);
+	
+},0);
+ 
+ 
