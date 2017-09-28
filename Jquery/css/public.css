@@ -11,7 +11,7 @@ body {
 	width: 1280px;
 	height: 1024px;
  	position: relative;
-	background-image: url(../img/main_background.png);
+	/*background-image: url(../img/main_background.png);*/
 	/*overflow: hidden;*/
 }
 a {
