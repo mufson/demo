@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<title>es6</title>
+		<!--<link rel="stylesheet" type="text/css" href="css/public.css"/>-->
+		<!--<link rel="stylesheet" type="text/css" href="css/es2.css"/>-->
+		
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+ 		 <!--<script src="js/es62.js" type="text/javascript" charset="utf-8"></script>--> 
+ 		 <!--<script src="js/es63.js" type="text/javascript" charset="utf-8"></script>--> 
+ 		 <!--<script src="testjs/promise.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/async.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/Iterator.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/SetMap.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/style.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/8function.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/9object.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/test.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="js/dataMonitor.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 <!--<script src="testjs/3string.js" type="text/javascript" charset="utf-8"></script>-->
+ 		 
+ 		 
+
+    <script src="dev/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+	<script src="dev/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+
+	<link href="css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+	<link href="css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
+	<script src="dev/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+	<script src="dev/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+	
+	<script src="dev/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+	<link href="css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+	
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: arial, verdana, sans-serif;
+            font-size: 12px;
+            background: #ddd;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+            border-radius: 5px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -webkit-border-radius: 5px;
+        }
+        .header {
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 -1px 1px black;
+            background-image: linear-gradient(#3C3C3C,#111);
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#3C3C3C),to(#111));
+            background-image: -moz-linear-gradient(#3C3C3C,#111);
+        }
+        .header h1 {
+            text-align: center;
+            font-size: 16px;
+            margin: .6em 0;
+            padding: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .content {
+            padding: 15px;
+            background: #fff;
+        }
+       
+    </style>
+    
+    <script type="text/javascript">
+        $(function () {
+			var currYear = (new Date()).getFullYear();	
+			var opt={};
+			opt.date = {preset : 'date'};
+			//opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+			opt.datetime = {preset : 'datetime'};
+			opt.time = {preset : 'time'};
+			opt.default = {
+				theme: 'android-ics light', //皮肤样式
+		        display: 'modal', //显示方式 
+		        mode: 'scroller', //日期选择模式
+				lang:'zh',
+		        startYear:currYear - 10, //开始年份
+		        endYear:currYear + 10 //结束年份
+			};
+
+			$("#appDate").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+		   
+		 
+
+        });
+    </script>   
+	</head>
+	<body>
+		 
+		
+<!-- 			<p>123 </p> 
+ 	    <div>  
+    <div id="show" style="width:500px;"></div> 
+    </div>  --> 
+<div class="content">
+
+		<div class="demos">
+			<label for="appDate">日期</label>
+			<input type="text" name="appDate" id="appDate" />
+		</div>
+		 <div class="ss">fsdklfasdjklfkdas</div>
+	</div>
+    <script type="text/javascript">
+    	$('.ss').click(function(){
+    		
+    		var data = $('#appDate').val();
+    		console.log(data);
+    		
+    	})
+    </script>
+<!--    <script>  
+    var w = 1000;  
+    var i = 0;  
+    function showtime(){  
+        showtime.curr=  +new Date();  
+        f = setTimeout('showtime()',1000);  
+        w+=(showtime.curr-(showtime.last||showtime.curr)-1000);  
+        document.getElementById("show").innerHTML+=i+"   "+(showtime.curr-(showtime.last||showtime.curr)-1000)  +"    "+w+"   <br/>";  
+        showtime.last=showtime.curr;  
+        i++;  
+    }  
+   showtime();  
+    </script> -->
+ 
+	</body>
+</html>

@@ -7,11 +7,12 @@ console.log(window['myglobal']);
 console.log(this.myglobal);*/
 
 //全局变量的问题
-function sum(x,y) {
-	result = x + y;
-	return result;
+function sum1(x,y) {
+	result1 = x + y;
+	return result1;
 }
-
+ 
+ 
 function sum(x,y) {
 	var result = x+y;
 	return result;
@@ -110,10 +111,8 @@ var moth = "08",
 //下划线前缀 私有变量属性
 
 
-
-
-
-
+ 
+ 
 
 
 

@@ -6,7 +6,7 @@ $(function () {
 		input:1
 	};
 	//问题实体
-/*	function question(label,answertype,choices){
+ 	function question(label,answertype,choices){
 		return{
 			label:label,
 			answertype:answertype,
@@ -60,24 +60,8 @@ $(function () {
 	var questions = [question('1aaaabbbbbb?',answertype.choice,['yes','no']),question('ccccdddd?',answertype.input)]
 	
 	var questionRegion = document.getElementById('question');
-	view.render(questionRegion,questions);*/
+	view.render(questionRegion,questions); 
 	
-
-	
-	
-	var ts = [
-		{a:5,name:555},
-		{a:6,name:666},
-		{a:7,name:777},
-		{a:8,name:888},
-		{a:9,name:999},
-	];
-	
-	var s = $.grep( [], function(n,i){
-		  return n > 0;
-		})[0];
-	var s2 = ts.filter(x=> x.a>7)[0];	
-		console.log(s2);
  
 	/******************************************************/
 	
@@ -155,6 +139,6 @@ $(function () {
 	var questionRegion = document.getElementById('questions');
 	view.render(questionRegion, questions);
 	
-	console.log("333");
+ 
 	/******************************************************/
 })
